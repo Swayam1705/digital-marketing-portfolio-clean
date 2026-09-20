@@ -374,7 +374,7 @@ export const portfolioData = {
     {
       institution: "SkillCircle (Digital Marketing Academy)",
       program: "Diploma Course in Digital Marketing",
-      period: "2025 — Present",
+      period: "2026 — Present",
       description:
         "Practical training focused on Social Media Strategy, Content Creation, SEO, Meta & Google Ads setup, Email Marketing, Canva graphic design, and Web Analytics.",
     },
