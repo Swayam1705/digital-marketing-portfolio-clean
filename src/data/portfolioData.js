@@ -42,7 +42,7 @@ export const portfolioData = {
 
     email: "samruddhishukla1510@gmail.com",
     phone: "+91 98695 83814",
-    location: "[Dombivali, India]",
+    location: "Dombivali, India",
 
     // Short snapshot chips shown beside the biography.
     focusAreas: [
@@ -66,23 +66,23 @@ export const portfolioData = {
    *  Common platforms (LinkedIn, Instagram, Behance, GitHub, X, YouTube)
    *  automatically get a matching icon in the footer/contact section.
    * ------------------------------------------------------------------------ */
-  socials: [
-    {
-      platform: "LinkedIn",
-      label: "[SAMRUDDHI SHUKLA]",
-      url: "https://www.linkedin.com/in/samruddhi-shukla-57b16a340?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-    },
-    {
-      platform: "Instagram",
-      label: "[SAMCREATES.15]",
-      url: "https://www.instagram.com/samcreates.15?stkn=ZnRtcWRhYmJ6a3Rz",
-    },
-    {
-      platform: "Facebook",
-      label: "[SAMRUDDHI SHUKLA]",
-      url: "https://www.facebook.com/share/19aWayWeTn/?stkn=ZnRtcWRhYmJ6a3Rz",
-    },
-  ],
+ socials: [
+  {
+    platform: "LinkedIn",
+    label: "Samruddhi Shukla",
+    url: "https://www.linkedin.com/in/samruddhi-shukla-57b16a340",
+  },
+  {
+    platform: "Instagram",
+    label: "@samcreates.15",
+    url: "https://www.instagram.com/samcreates.15",
+  },
+  {
+    platform: "Facebook",
+    label: "Samruddhi Shukla",
+    url: "https://www.facebook.com/share/19aWayWeTn/",
+  },
+],
 
   /* --------------------------------------------------------------------------
    *  "WHAT I BELIEVE" — positioning statements, NOT claims of experience.
@@ -291,7 +291,7 @@ export const portfolioData = {
       category: "Music & Entertainment",
       image: "/images/projects/project-08-spotify-music-colors.png", 
       description: "A vibrant music campaign concept connecting sound with color, energy, movement, and personal expression through an expressive headphone-centered composition.",
-      tools: ["Photoshop, Canva, Digital Composition, Campaign Design"],
+      tools: ["Photoshop", "Canva", "Digital Composition", "Campaign Design"],
     },
     {
       title: "Mint Lemonade — Taste of Freshness",
@@ -361,38 +361,33 @@ export const portfolioData = {
   /* --------------------------------------------------------------------------
    *  EDUCATION — chronological cards in the "Learning in motion" timeline.
    * ------------------------------------------------------------------------ */
+    /* --------------------------------------------------------------------------
+   *  EDUCATION
+   * ------------------------------------------------------------------------ */
+    /* --------------------------------------------------------------------------
+   *  EDUCATION
+   * ------------------------------------------------------------------------ */
   education: [
     {
-      institution: "[INSTITUTION / UNIVERSITY]",
-      program: "[PROGRAM / DEGREE NAME]",
-      period: "[YEARS OR 'PRESENT']",
+      institution: "Self-Directed Learning & Practical Projects",
+      program: "Digital Marketing & Brand Strategy",
+      period: "2025 — Present",
       description:
-        "[OPTIONAL: RELEVANT COURSEWORK, SPECIALIZATION OR ACADEMIC FOCUS.]",
+        "Hands-on self-driven learning and practical application focused on Social Media Strategy, Content Creation, SEO, Meta Ads Manager, Email Marketing, Canva graphic design, and Web Analytics.",
     },
     {
-      institution: "[EARLIER INSTITUTION — DELETE IF NOT NEEDED]",
-      program: "[PROGRAM / QUALIFICATION]",
-      period: "[YEARS]",
-      description: "[OPTIONAL DESCRIPTION.]",
-    },
-  ],
-
-  /* --------------------------------------------------------------------------
-   *  EXPERIENCE — internships, freelance, student clubs, part-time work...
-   * ------------------------------------------------------------------------ */
-  experience: [
-    {
-      organization: "[ORGANIZATION, CLUB OR FREELANCE CONTEXT]",
-      role: "[ROLE — e.g. MARKETING INTERN]",
-      period: "[DATES OR 'PRESENT']",
+      institution: "Smt. Indira Gandhi College Of Engineering",
+      program: "B.Tech in Artificial Intelligence & Data Science - Fourth Year",
+      period: "2023 — Present",
       description:
-        "[WHAT YOU WERE RESPONSIBLE FOR AND WHAT YOU LEARNED — KEEP IT HONEST.]",
+        "Building strong analytical thinking, technical problem-solving skills, and data logic — translating engineering structure into data-driven marketing decisions.",
     },
     {
-      organization: "[ORGANIZATION, CLUB OR FREELANCE CONTEXT]",
-      role: "[ROLE — DELETE THIS ENTRY IF NOT NEEDED]",
-      period: "[DATES]",
-      description: "[WHAT YOU DID AND WHAT YOU LEARNED.]",
+      institution: "GEI's S. V. Joshi High School & Junior College",
+      program: "Higher Secondary Certificate (HSC)",
+      period: "2021 — 2023",
+      description:
+        "Completed Higher Secondary Education in Science, establishing a strong foundation in logic, mathematics, and quantitative problem-solving.",
     },
   ],
 
