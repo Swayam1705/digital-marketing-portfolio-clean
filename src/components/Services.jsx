@@ -61,10 +61,10 @@ export default function Services() {
               background: "#fff",
               border: "1px solid rgba(20,18,16,0.1)",
               borderRadius: "16px",
-              padding: "28px",
+              padding: "28px 28px 24px",
               display: "flex",
               flexDirection: "column",
-              minHeight: "260px",
+              minHeight: "240px",
               transition: "transform 0.25s ease, box-shadow 0.25s ease",
             }}
             onMouseEnter={(e) => {
@@ -86,7 +86,7 @@ export default function Services() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                marginBottom: "20px",
+                marginBottom: "18px",
               }}
             >
               {iconMap[service.icon] || <Target size={22} />}
@@ -109,32 +109,46 @@ export default function Services() {
                 fontSize: "0.95rem",
                 lineHeight: 1.6,
                 opacity: 0.75,
-                margin: "0 0 20px 0",
+                margin: "0 0 22px 0",
                 flex: "1 1 auto",
               }}
             >
               {service.description}
             </p>
 
-            {/* Let's talk → Contact */}
+            {/* Light, non-congested CTA */}
             <button
               type="button"
               onClick={() => scrollToSection("contact")}
               style={{
+                alignSelf: "flex-start",
                 marginTop: "auto",
                 display: "inline-flex",
                 alignItems: "center",
-                gap: "8px",
-                background: "none",
-                border: "none",
-                padding: 0,
+                gap: "6px",
+                background: "transparent",
+                border: "1px solid rgba(20,18,16,0.15)",
+                borderRadius: "999px",
+                padding: "8px 14px",
                 cursor: "pointer",
-                color: "#c45c26",
-                fontWeight: 700,
-                fontSize: "0.9rem",
+                color: "#1a1714",
+                fontWeight: 600,
+                fontSize: "0.8rem",
+                letterSpacing: "0.02em",
+                transition: "all 0.2s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "#1a1714";
+                e.currentTarget.style.color = "#fff";
+                e.currentTarget.style.borderColor = "#1a1714";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "transparent";
+                e.currentTarget.style.color = "#1a1714";
+                e.currentTarget.style.borderColor = "rgba(20,18,16,0.15)";
               }}
             >
-              Let&apos;s talk <ArrowRight size={16} />
+              Let&apos;s talk <ArrowRight size={14} />
             </button>
           </div>
         ))}
