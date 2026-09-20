@@ -1,105 +1,49 @@
-import {
-  Megaphone,
-  Newspaper,
-  Search,
-  Mail,
-  Palette,
-  PenLine,
-  Target,
-  BarChart3,
-  ArrowRight,
-} from "lucide-react";
+﻿import React from "react";
 import { portfolioData } from "../data/portfolioData.js";
-import Reveal from "./Reveal.jsx";
-import SectionHeading from "./SectionHeading.jsx";
-import { scrollToSection } from "../utils/scroll.js";
+import { Megaphone, PenTool, Palette, Search, Target, BarChart2 } from "lucide-react";
 
-// Extend this map if you introduce new service icons in portfolioData.js.
-const ICONS = {
-  megaphone: Megaphone,
-  newspaper: Newspaper,
-  search: Search,
-  mail: Mail,
-  palette: Palette,
-  pen: PenLine,
-  target: Target,
-  chart: BarChart3,
+const iconMap = {
+  megaphone: <Megaphone size={24} />,
+  pen: <PenTool size={24} />,
+  palette: <Palette size={24} />,
+  search: <Search size={24} />,
+  target: <Target size={24} />,
+  chart: <BarChart2 size={24} />,
 };
 
-function ServiceCard({ service }) {
-  const Icon = ICONS[service.icon] ?? Megaphone;
-  const inner = (
-    <>
-      <span className="service-card__icon" aria-hidden="true">
-        <Icon />
-      </span>
-      <h3 className="service-card__title">{service.title}</h3>
-      <p className="service-card__desc">{service.description}</p>
-      <span className="service-card__link">
-        Let&rsquo;s talk
-        <ArrowRight aria-hidden="true" />
-      </span>
-    </>
-  );
-
-  // "#contact" style links scroll smoothly; other URLs behave like real links.
-  if (service.link && service.link.startsWith("#")) {
-    return (
-      <button
-        className="service-card"
-        style={{ width: "100%", textAlign: "left" }}
-        aria-label={service.title}
-        onClick={() => scrollToSection(service.link.replace("#", ""))}
-      >
-        {inner}
-      </button>
-    );
-  }
-
-  return (
-    <a
-      className="service-card"
-      href={service.link || "#contact"}
-      aria-label={service.title}
-    >
-      {inner}
-    </a>
-  );
-}
-
 export default function Services() {
+  const services = portfolioData.services || [];
+
   return (
-    <section
-      id="services"
-      className="section services"
-      aria-labelledby="services-title"
-    >
-      <div className="container">
-        <SectionHeading
-          eyebrow="What I offer"
-          center
-          title={<span id="services-title">Ways we could work together.</span>}
-          intro="Areas I can help with now — and am actively developing. Think of these as starting points for a conversation, not a finished agency menu."
-        />
-
-        <ul className="services__grid" style={{ listStyle: "none" }}>
-          {portfolioData.services.map((service, i) => (
-            <Reveal
-              as="li"
-              key={service.title}
-              delay={(i % 4) * 90}
-              variant="scale"
-              style={{ display: "flex" }}
-            >
-              <ServiceCard service={service} />
-            </Reveal>
-          ))}
-        </ul>
-
-        <p className="services__footnote">
-          Still learning, always learning — these reflect current interests and
-          developing capabilities, not claims of senior expertise.
+    <section id="services" style={{ width: "100%", maxWidth: "1200px", margin: "0 auto", padding: "80px 20px" }}>
+      <div style={{ textAlign: "center", marginBottom: "56px" }}>
+        <h2 style={{ fontFamily: "Fraunces, serif", fontSize: "clamp(2rem, 5vw, 3rem)", marginBottom: "12px", lineHeight: 1.1, color: "#1a1714" }}>
+          How I Can Help
+        </h2>
+        <p style={{ fontSize: "clamp(0.95rem, 2vw, 1.1rem)", opacity: 0.75, maxWidth: "600px", margin: "0 auto", lineHeight: 1.5 }}>
+          Combining strategy, creativity, and data to deliver marketing assets that connect with audiences.
         </p>
+      </div>
+
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "24px" }}>
+        {services.map((service, idx) => (
+          <div key={idx} style={{ background: "#fff", border: "1px solid rgba(20,18,16,0.1)", borderRadius: "16px", padding: "32px", display: "flex", flexDirection: "column", transition: "transform 0.3s ease, box-shadow 0.3s ease" }}
+               onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 16px 32px rgba(0,0,0,0.06)"; }}
+               onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}>
+            
+            <div style={{ width: "56px", height: "56px", borderRadius: "12px", background: "rgba(196, 92, 38, 0.1)", color: "#c45c26", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "24px" }}>
+              {iconMap[service.icon] || <Target size={24} />}
+            </div>
+            
+            <h3 style={{ fontSize: "1.25rem", fontWeight: "700", marginBottom: "12px", color: "#1a1714" }}>
+              {service.title}
+            </h3>
+            
+            <p style={{ fontSize: "1rem", lineHeight: 1.6, opacity: 0.75, margin: 0 }}>
+              {service.description}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );

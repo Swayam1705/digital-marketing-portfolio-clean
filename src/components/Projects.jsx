@@ -9,51 +9,31 @@ export default function Projects() {
   const projectsList = portfolioData.projects || [];
   const categories = ["All", ...new Set(projectsList.map((p) => p.category).filter(Boolean))];
 
-  const filteredProjects =
-    activeFilter === "All"
-      ? projectsList
-      : projectsList.filter((p) => p.category === activeFilter);
+  const filteredProjects = activeFilter === "All"
+    ? projectsList
+    : projectsList.filter((p) => p.category === activeFilter);
 
   return (
-    <section
-      className="projects-section"
-      style={{ width: "100%", maxWidth: "1200px", margin: "0 auto" }}
-    >
-      <div className="projects-header" style={{ textAlign: "center", marginBottom: "32px" }}>
-        <h2 style={{ fontFamily: "Fraunces, serif", fontSize: "2.8rem", marginBottom: "8px" }}>
+    <section className="projects-section" style={{ width: "100%", maxWidth: "1200px", margin: "0 auto", padding: "80px 20px" }}>
+      <div className="projects-header" style={{ textAlign: "center", marginBottom: "48px" }}>
+        <h2 style={{ fontFamily: "Fraunces, serif", fontSize: "clamp(2rem, 5vw, 3rem)", marginBottom: "12px", lineHeight: 1.1, color: "var(--color-ink, #1a1714)" }}>
           Selected Works & Designs
         </h2>
-        <p style={{ fontSize: "1rem", opacity: 0.75, maxWidth: "600px", margin: "0 auto" }}>
+        <p style={{ fontSize: "clamp(0.95rem, 2vw, 1.1rem)", opacity: 0.75, maxWidth: "600px", margin: "0 auto", lineHeight: 1.5 }}>
           A visual collection of social creatives, branding mockups, posters, and campaign assets.
         </p>
 
         {categories.length > 2 && (
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "center",
-              gap: "8px",
-              marginTop: "24px",
-            }}
-          >
+          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "10px", marginTop: "28px" }}>
             {categories.map((cat, i) => (
               <button
                 key={i}
                 onClick={() => setActiveFilter(cat)}
                 style={{
-                  padding: "6px 14px",
-                  borderRadius: "20px",
-                  border:
-                    activeFilter === cat
-                      ? "1px solid var(--ember, #c45c26)"
-                      : "1px solid rgba(20,18,16,0.15)",
-                  background:
-                    activeFilter === cat ? "var(--ember, #c45c26)" : "rgba(242, 237, 228, 0.5)",
+                  padding: "8px 16px", borderRadius: "30px", fontSize: "13px", fontWeight: "600", cursor: "pointer", transition: "all 0.25s ease",
+                  border: activeFilter === cat ? "1px solid #c45c26" : "1px solid rgba(20,18,16,0.15)",
+                  background: activeFilter === cat ? "#c45c26" : "transparent",
                   color: activeFilter === cat ? "#fff" : "#1a1714",
-                  fontSize: "12px",
-                  fontWeight: "600",
-                  cursor: "pointer",
                 }}
               >
                 {cat}
@@ -63,136 +43,37 @@ export default function Projects() {
         )}
       </div>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
-          gap: "20px",
-        }}
-      >
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "24px" }}>
         {filteredProjects.map((project, idx) => (
           <div
             key={idx}
             onClick={() => setSelectedProject(project)}
             style={{
-              display: "flex",
-              flexDirection: "column",
-              borderRadius: "12px",
-              overflow: "hidden",
-              background: "#fff",
-              border: "1px solid rgba(20,18,16,0.1)",
-              cursor: "pointer",
-              transition: "transform 0.25s ease, box-shadow 0.25s ease",
+              display: "flex", flexDirection: "column", borderRadius: "14px", overflow: "hidden", background: "#fff", border: "1px solid rgba(20,18,16,0.1)", cursor: "pointer", transition: "transform 0.3s ease, box-shadow 0.3s ease",
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-6px)";
-              e.currentTarget.style.boxShadow = "0 16px 40px rgba(20,18,16,0.12)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "none";
-            }}
+            onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 20px 40px rgba(20,18,16,0.08)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
           >
-            {/* Thumbnail — always fills box cleanly */}
-            <div
-              style={{
-                width: "100%",
-                aspectRatio: "4 / 3",
-                overflow: "hidden",
-                position: "relative",
-                background: "#ece4d8",
-              }}
-            >
-              <img
-                src={project.image || "/images/project-placeholder-1.svg"}
-                alt={project.title}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  objectPosition: "center",
-                  display: "block",
-                }}
-              />
-              <span
-                style={{
-                  position: "absolute",
-                  top: "10px",
-                  left: "10px",
-                  background: "rgba(20, 18, 16, 0.85)",
-                  color: "#fff",
-                  fontSize: "9px",
-                  fontWeight: "700",
-                  padding: "3px 8px",
-                  borderRadius: "4px",
-                  letterSpacing: "0.06em",
-                  textTransform: "uppercase",
-                }}
-              >
+            <div style={{ width: "100%", aspectRatio: "4/3", overflow: "hidden", position: "relative", background: "#ece4d8" }}>
+              <img src={project.image || "/images/project-placeholder-1.svg"} alt={project.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+              <span style={{ position: "absolute", top: "12px", left: "12px", background: "rgba(20, 18, 16, 0.85)", color: "#fff", fontSize: "10px", fontWeight: "700", padding: "4px 10px", borderRadius: "6px", letterSpacing: "0.06em", textTransform: "uppercase" }}>
                 {project.category}
               </span>
             </div>
 
-            <div
-              style={{
-                padding: "14px 16px 16px",
-                display: "flex",
-                flexDirection: "column",
-                flexGrow: 1,
-              }}
-            >
-              <span
-                style={{
-                  fontSize: "10px",
-                  fontWeight: "700",
-                  color: "var(--ember, #c45c26)",
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                }}
-              >
+            <div style={{ padding: "20px", display: "flex", flexDirection: "column", flexGrow: 1 }}>
+              <span style={{ fontSize: "10px", fontWeight: "700", color: "#c45c26", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "6px" }}>
                 {project.client || "Concept Design"}
               </span>
-
-              <h3
-                style={{
-                  fontSize: "1.05rem",
-                  fontWeight: "700",
-                  margin: "4px 0 8px",
-                  lineHeight: 1.3,
-                  color: "#1a1714",
-                }}
-              >
+              <h3 style={{ fontSize: "1.15rem", fontWeight: "700", margin: "0 0 10px 0", lineHeight: 1.3, color: "#1a1714" }}>
                 {project.title}
               </h3>
-
-              <p
-                style={{
-                  fontSize: "0.85rem",
-                  opacity: 0.75,
-                  margin: "0 0 12px",
-                  lineHeight: 1.4,
-                  display: "-webkit-box",
-                  WebkitLineClamp: 2,
-                  WebkitBoxOrient: "vertical",
-                  overflow: "hidden",
-                }}
-              >
+              <p style={{ fontSize: "0.9rem", opacity: 0.75, margin: "0 0 16px 0", lineHeight: 1.5, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
                 {project.description}
               </p>
-
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", marginTop: "auto" }}>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginTop: "auto" }}>
                 {project.tools?.slice(0, 3).map((tool, i) => (
-                  <span
-                    key={i}
-                    style={{
-                      fontSize: "9px",
-                      background: "rgba(20, 18, 16, 0.04)",
-                      border: "1px solid rgba(20, 18, 16, 0.08)",
-                      padding: "2px 6px",
-                      borderRadius: "3px",
-                      fontWeight: "500",
-                    }}
-                  >
+                  <span key={i} style={{ fontSize: "10px", background: "rgba(20, 18, 16, 0.04)", border: "1px solid rgba(20, 18, 16, 0.08)", padding: "4px 8px", borderRadius: "4px", fontWeight: "600", color: "#1a1714" }}>
                     {tool}
                   </span>
                 ))}
@@ -202,9 +83,7 @@ export default function Projects() {
         ))}
       </div>
 
-      {selectedProject && (
-        <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
-      )}
+      {selectedProject && <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />}
     </section>
   );
 }

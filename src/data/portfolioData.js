@@ -367,25 +367,28 @@ export const portfolioData = {
     /* --------------------------------------------------------------------------
    *  EDUCATION
    * ------------------------------------------------------------------------ */
+    /* --------------------------------------------------------------------------
+   *  EDUCATION
+   * ------------------------------------------------------------------------ */
   education: [
     {
-      institution: "Self-Directed Learning & Practical Projects",
-      program: "Digital Marketing & Brand Strategy",
+      institution: "SkillCircle (Digital Marketing Academy)",
+      program: "Diploma Course in Digital Marketing",
       period: "2025 — Present",
       description:
-        "Hands-on self-driven learning and practical application focused on Social Media Strategy, Content Creation, SEO, Meta Ads Manager, Email Marketing, Canva graphic design, and Web Analytics.",
+        "Practical training focused on Social Media Strategy, Content Creation, SEO, Meta & Google Ads setup, Email Marketing, Canva graphic design, and Web Analytics.",
     },
     {
       institution: "Smt. Indira Gandhi College Of Engineering",
-      program: "B.Tech in Artificial Intelligence & Data Science - Fourth Year",
+      program: "B.Tech in Artificial Intelligence & Data Science — Final Year",
       period: "2023 — Present",
       description:
         "Building strong analytical thinking, technical problem-solving skills, and data logic — translating engineering structure into data-driven marketing decisions.",
     },
     {
       institution: "GEI's S. V. Joshi High School & Junior College",
-      program: "Higher Secondary Certificate (HSC)",
-      period: "2021 — 2023",
+      program: "Higher Secondary Certificate (HSC) — Science",
+      period: "2022 — 2023",
       description:
         "Completed Higher Secondary Education in Science, establishing a strong foundation in logic, mathematics, and quantitative problem-solving.",
     },

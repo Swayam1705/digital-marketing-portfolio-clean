@@ -1,76 +1,64 @@
+﻿import React from "react";
 import { portfolioData } from "../data/portfolioData.js";
-import Reveal from "./Reveal.jsx";
-import SectionHeading from "./SectionHeading.jsx";
 
-/**
- * "Learning in motion" — one flexible timeline that merges EDUCATION and
- * EXPERIENCE entries (internships, freelance, clubs, coursework...).
- * All content comes from portfolioData.js.
- */
 export default function Experience() {
-  const { education, experience } = portfolioData;
-
-  // Tag and merge both data sources. Reorder/filter here if you prefer one
-  // combined chronological list.
-  const items = [
-    ...education.map((entry) => ({ ...entry, type: "Education", kind: "edu" })),
-    ...experience.map((entry) => ({
-      ...entry,
-      // Normalize fields for rendering.
-      title: entry.role,
-      organization: entry.organization,
-      type: "Experience",
-      kind: "exp",
-    })),
-  ];
+  const experienceList = portfolioData.experience || [];
+  const educationList = portfolioData.education || [];
 
   return (
-    <section
-      id="experience"
-      className="section"
-      aria-labelledby="experience-title"
-    >
-      <div className="container">
-        <SectionHeading
-          eyebrow="Education & experience"
-          title={<span id="experience-title">Learning in motion.</span>}
-          intro="Studying, interning, freelancing and experimenting — every entry below is a step in the same journey."
-        />
-
-        <ol className="timeline" style={{ listStyle: "none" }}>
-          {items.map((item, i) => (
-            <Reveal
-              as="li"
-              className="timeline__item"
-              key={`${item.kind}-${i}`}
-              variant="left"
-              delay={i * 70}
-            >
-              <div className="timeline__meta">
-                <span className="timeline__period">{item.period}</span>
-                <span
-                  className={`timeline__type ${
-                    item.kind === "exp" ? "timeline__type--exp" : ""
-                  }`}
-                >
-                  {item.type}
-                </span>
-              </div>
-              <div className="timeline__content">
-                <h3 className="timeline__role">
-                  {item.kind === "edu" ? item.program : item.title}
-                </h3>
-                <p className="timeline__org">
-                  {item.kind === "edu" ? item.institution : item.organization}
-                </p>
-                {item.description && (
-                  <p className="timeline__desc">{item.description}</p>
-                )}
-              </div>
-            </Reveal>
-          ))}
-        </ol>
+    <section className="timeline-section" style={{ width: "100%", maxWidth: "900px", margin: "0 auto", padding: "80px 20px" }}>
+      <div style={{ textAlign: "center", marginBottom: "56px" }}>
+        <h2 style={{ fontFamily: "Fraunces, serif", fontSize: "clamp(2rem, 5vw, 3rem)", marginBottom: "12px", lineHeight: 1.1, color: "#1a1714" }}>
+          Timeline & Background
+        </h2>
+        <p style={{ fontSize: "clamp(0.95rem, 2vw, 1.1rem)", opacity: 0.75, lineHeight: 1.5 }}>
+          My journey in marketing, learning, and academic development.
+        </p>
       </div>
+
+      {experienceList.length > 0 && (
+        <div style={{ marginBottom: "64px" }}>
+          <h3 style={{ fontSize: "1.2rem", fontWeight: "700", marginBottom: "24px", color: "#c45c26", letterSpacing: "0.1em", textTransform: "uppercase", borderBottom: "1px solid rgba(20,18,16,0.1)", paddingBottom: "12px" }}>
+            Experience & Projects
+          </h3>
+          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+            {experienceList.map((item, idx) => (
+              <div key={idx} style={{ padding: "28px", borderRadius: "14px", background: "#fff", border: "1px solid rgba(20,18,16,0.1)", boxShadow: "0 4px 20px rgba(0,0,0,0.02)" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "12px", marginBottom: "12px" }}>
+                  <h4 style={{ fontSize: "1.3rem", fontWeight: "700", margin: 0, color: "#1a1714" }}>{item.role || item.title}</h4>
+                  <span style={{ fontSize: "12px", fontWeight: "700", opacity: 0.8, background: "rgba(20,18,16,0.05)", padding: "6px 12px", borderRadius: "20px" }}>{item.period}</span>
+                </div>
+                <span style={{ fontSize: "14px", fontWeight: "700", color: "#c45c26", display: "block", marginBottom: "16px", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                  {item.organization || item.company || "Freelance"}
+                </span>
+                <p style={{ fontSize: "1rem", lineHeight: "1.65", margin: 0, opacity: 0.8 }}>{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {educationList.length > 0 && (
+        <div>
+          <h3 style={{ fontSize: "1.2rem", fontWeight: "700", marginBottom: "24px", color: "#c45c26", letterSpacing: "0.1em", textTransform: "uppercase", borderBottom: "1px solid rgba(20,18,16,0.1)", paddingBottom: "12px" }}>
+            Education & Learning
+          </h3>
+          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+            {educationList.map((item, idx) => (
+              <div key={idx} style={{ padding: "28px", borderRadius: "14px", background: "#fff", border: "1px solid rgba(20,18,16,0.1)", boxShadow: "0 4px 20px rgba(0,0,0,0.02)" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "12px", marginBottom: "12px" }}>
+                  <h4 style={{ fontSize: "1.3rem", fontWeight: "700", margin: 0, color: "#1a1714" }}>{item.program}</h4>
+                  <span style={{ fontSize: "12px", fontWeight: "700", opacity: 0.8, background: "rgba(20,18,16,0.05)", padding: "6px 12px", borderRadius: "20px" }}>{item.period}</span>
+                </div>
+                <span style={{ fontSize: "14px", fontWeight: "700", color: "#c45c26", display: "block", marginBottom: "16px", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                  {item.institution}
+                </span>
+                <p style={{ fontSize: "1rem", lineHeight: "1.65", margin: 0, opacity: 0.8 }}>{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 }

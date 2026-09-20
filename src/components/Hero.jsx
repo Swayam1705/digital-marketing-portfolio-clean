@@ -6,13 +6,6 @@ import { scrollToSection } from "../utils/scroll.js";
 export default function Hero() {
   const { name, role, tagline, intro } = portfolioData.personal;
 
-  // Split tagline to italicize/accent the last word
-  const words = (tagline || "").split(" ");
-  const accentWord = words.length > 1 ? words[words.length - 1] : null;
-  const taglineStart = accentWord
-    ? words.slice(0, -1).join(" ")
-    : tagline;
-
   return (
     <section id="hero" className="hero grain" aria-labelledby="hero-heading">
       <div className="container hero__inner">
@@ -24,17 +17,11 @@ export default function Hero() {
           id="hero-heading"
           className="hero__name hero__anim hero__anim--2"
         >
-          {name || "SAMRUDDHI SHUKLA"}
+          {name || "Samruddhi Shukla"}
         </h1>
 
         <p className="hero__tagline hero__anim hero__anim--3">
-          {accentWord ? (
-            <>
-              {taglineStart}Turning ideas into Brands people remember.<em>{accentWord}</em>
-            </>
-          ) : (
-            tagline
-          )}
+          {tagline || "Turning ideas into Brands people remember."}
         </p>
 
         <p className="hero__intro hero__anim hero__anim--4">
@@ -54,12 +41,12 @@ export default function Hero() {
             onClick={() => scrollToSection("contact")}
           >
             <Mail aria-hidden="true" />
-            Let&rsquo;s Connect
+            Let’s Connect
           </button>
         </div>
       </div>
 
-      {/* Decorative abstract visual */}
+      {/* Visual background element */}
       <div className="hero__visual" aria-hidden="true">
         <div className="hero__card">
           <div className="hero__card-row">
