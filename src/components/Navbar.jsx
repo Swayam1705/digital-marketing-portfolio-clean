@@ -9,11 +9,9 @@ export default function Navbar() {
 
   const links = [
     { name: "About", href: "#about", id: "about" },
-    { name: "Craft", href: "#skills", id: "skills" },
     { name: "Work", href: "#projects", id: "projects" },
-    { name: "Metrics", href: "#funnel", id: "funnel" },
-    { name: "Timeline", href: "#experience", id: "experience" },
     { name: "Services", href: "#services", id: "services" },
+    { name: "Timeline", href: "#experience", id: "experience" },
     { name: "Contact", href: "#contact", id: "contact" },
   ];
 
@@ -34,7 +32,7 @@ export default function Navbar() {
 
     const onScroll = () => {
       setScrolled(window.scrollY > 20);
-      const ids = ["hero", "about", "skills", "projects", "funnel", "experience", "services", "contact"];
+      const ids = ["hero", "about", "projects", "services", "experience", "contact"];
       let current = "hero";
       for (const id of ids) {
         const el = document.getElementById(id);
@@ -67,7 +65,7 @@ export default function Navbar() {
         <div className="site-nav-left">
           <a href="#hero" className="site-nav-logo" onClick={(e) => go(e, "#hero")}>
             <span className="site-nav-mark" aria-hidden="true" />
-            <span className="site-nav-name">{portfolioData?.name || "Portfolio"}</span>
+            <span className="site-nav-name">{portfolioData?.personal?.name || "Portfolio"}</span>
           </a>
 
           <div className="site-nav-status" aria-label="Availability">

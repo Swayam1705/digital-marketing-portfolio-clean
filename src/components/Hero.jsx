@@ -1,3 +1,4 @@
+﻿import React from "react";
 import { ArrowRight, Mail } from "lucide-react";
 import { portfolioData } from "../data/portfolioData.js";
 import { scrollToSection } from "../utils/scroll.js";
@@ -5,32 +6,31 @@ import { scrollToSection } from "../utils/scroll.js";
 export default function Hero() {
   const { name, role, tagline, intro } = portfolioData.personal;
 
-  // Split the tagline at the first word to accent it. Falls back gracefully
-  // for placeholder text (the whole tagline simply stays unaccented if short).
-  const words = tagline.split(" ");
-  const accentWord = words.length > 2 ? words[words.length - 1] : null;
+  // Split tagline to italicize/accent the last word
+  const words = (tagline || "").split(" ");
+  const accentWord = words.length > 1 ? words[words.length - 1] : null;
   const taglineStart = accentWord
     ? words.slice(0, -1).join(" ")
     : tagline;
 
   return (
-    <section id="home" className="hero grain" aria-labelledby="hero-heading">
+    <section id="hero" className="hero grain" aria-labelledby="hero-heading">
       <div className="container hero__inner">
         <p className="eyebrow hero__eyebrow hero__anim hero__anim--1">
-          DIGITAL MARKETING STRATEGIST & CREATIVE
+          {role || "DIGITAL MARKETING FREELANCER"}
         </p>
 
         <h1
           id="hero-heading"
           className="hero__name hero__anim hero__anim--2"
         >
-          SAMRUDDHI SHUKLA
+          {name || "SAMRUDDHI SHUKLA"}
         </h1>
 
         <p className="hero__tagline hero__anim hero__anim--3">
           {accentWord ? (
             <>
-              {taglineStart} Turning raw attention into authentic connection & measurable growth.<em>{accentWord}</em>
+              {taglineStart}Turning ideas into Brands people remember.<em>{accentWord}</em>
             </>
           ) : (
             tagline
@@ -38,13 +38,13 @@ export default function Hero() {
         </p>
 
         <p className="hero__intro hero__anim hero__anim--4">
-          Passionate about content strategy, SEO, and consumer psychology. I help modern brands build cultural relevance, captivate audiences, and scale their digital footprint through data-backed storytelling.
+          {intro || "Passionate about content strategy, SEO, and consumer psychology. I help brands build a stronger digital presence through thoughtful content, social media, SEO and performance marketing."}
         </p>
 
         <div className="hero__actions hero__anim hero__anim--5">
           <button
             className="btn btn-coral"
-            onClick={() => scrollToSection("work")}
+            onClick={() => scrollToSection("projects")}
           >
             Explore My Work
             <ArrowRight aria-hidden="true" />
@@ -59,7 +59,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Decorative abstract "campaign dashboard" — purely visual */}
+      {/* Decorative abstract visual */}
       <div className="hero__visual" aria-hidden="true">
         <div className="hero__card">
           <div className="hero__card-row">

@@ -1,96 +1,209 @@
 ﻿import React, { useState } from "react";
+import { portfolioData } from "../data/portfolioData.js";
 import ProjectModal from "./ProjectModal";
-
-const defaultProjects = [
-  {
-    id: 1,
-    title: "Viral TikTok & Reels Growth Engine",
-    category: "Organic Growth & Content",
-    description: "Designed a short-form video content strategy generating multi-million organic impressions.",
-    objective: "Increase brand reach among Gen-Z demographics without paid ad spend.",
-    approach: "Utilized psychological hooks, trending audio patterns, and community comment bait.",
-    metrics: [
-      { value: "3.2M+", label: "Organic Impressions" },
-      { value: "+180%", label: "Follower Growth" },
-      { value: "8.4%", label: "Avg Engagement" }
-    ],
-    tools: ["TikTok Ads Manager", "CapCut", "Google Analytics 4", "Notion"],
-    outcome: "Generated 3.2M organic views in 60 days, driving a 28% increase in website landing traffic."
-  },
-  {
-    id: 2,
-    title: "Omnichannel Funnel & ROAS Optimization",
-    category: "Performance Marketing",
-    description: "A complete overhaul of Meta & Google Search ad campaigns for an e-commerce brand.",
-    objective: "Lower Customer Acquisition Cost (CAC) while scaling monthly ad spend.",
-    approach: "A/B tested creative variations, implemented dynamic retargeting, and built custom landing pages.",
-    metrics: [
-      { value: "4.2x", label: "Return on Ad Spend" },
-      { value: "-32%", label: "Customer Acquisition Cost" },
-      { value: "+145%", label: "Conversion Rate" }
-    ],
-    tools: ["Meta Ads Manager", "Google Ads", "Shopify", "Klaviyo"],
-    outcome: "Achieved a 4.2x ROAS over 90 days while scaling monthly ad spend by 200%."
-  },
-  {
-    id: 3,
-    title: "SEO Content Architecture & Authority Building",
-    category: "Search Engine Optimization",
-    description: "Built a topic cluster SEO framework to capture high-intent search queries.",
-    objective: "Outrank entrenched competitors on key high-volume commercial keywords.",
-    approach: "Executed technical site audits, programmatic internal linking, and strategic guest outreach.",
-    metrics: [
-      { value: "#1", label: "Google Rank for Core Terms" },
-      { value: "+210%", label: "Organic Search Traffic" },
-      { value: "14.2k", label: "Monthly Organic Clicks" }
-    ],
-    tools: ["Ahrefs", "SEMrush", "Google Search Console", "WordPress"],
-    outcome: "Secured top-3 rankings for 14 high-converting keywords within 5 months."
-  }
-];
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [activeFilter, setActiveFilter] = useState("All");
+
+  const projectsList = portfolioData.projects || [];
+  const categories = ["All", ...new Set(projectsList.map((p) => p.category).filter(Boolean))];
+
+  const filteredProjects =
+    activeFilter === "All"
+      ? projectsList
+      : projectsList.filter((p) => p.category === activeFilter);
 
   return (
-    <section className="projects-section">
-      <div className="projects-header">
-        <h2 className="projects-title">Featured Campaigns</h2>
-        <p className="projects-subtitle">Click any project to inspect the strategy, metrics & marketing stack.</p>
+    <section
+      className="projects-section"
+      style={{ width: "100%", maxWidth: "1200px", margin: "0 auto" }}
+    >
+      <div className="projects-header" style={{ textAlign: "center", marginBottom: "32px" }}>
+        <h2 style={{ fontFamily: "Fraunces, serif", fontSize: "2.8rem", marginBottom: "8px" }}>
+          Selected Works & Designs
+        </h2>
+        <p style={{ fontSize: "1rem", opacity: 0.75, maxWidth: "600px", margin: "0 auto" }}>
+          A visual collection of social creatives, branding mockups, posters, and campaign assets.
+        </p>
+
+        {categories.length > 2 && (
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              gap: "8px",
+              marginTop: "24px",
+            }}
+          >
+            {categories.map((cat, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveFilter(cat)}
+                style={{
+                  padding: "6px 14px",
+                  borderRadius: "20px",
+                  border:
+                    activeFilter === cat
+                      ? "1px solid var(--ember, #c45c26)"
+                      : "1px solid rgba(20,18,16,0.15)",
+                  background:
+                    activeFilter === cat ? "var(--ember, #c45c26)" : "rgba(242, 237, 228, 0.5)",
+                  color: activeFilter === cat ? "#fff" : "#1a1714",
+                  fontSize: "12px",
+                  fontWeight: "600",
+                  cursor: "pointer",
+                }}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
-      <div className="projects-grid">
-        {defaultProjects.map((project) => (
-          <div 
-            key={project.id} 
-            className="project-card"
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+          gap: "20px",
+        }}
+      >
+        {filteredProjects.map((project, idx) => (
+          <div
+            key={idx}
             onClick={() => setSelectedProject(project)}
-            data-cursor="VIEW"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              borderRadius: "12px",
+              overflow: "hidden",
+              background: "#fff",
+              border: "1px solid rgba(20,18,16,0.1)",
+              cursor: "pointer",
+              transition: "transform 0.25s ease, box-shadow 0.25s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-6px)";
+              e.currentTarget.style.boxShadow = "0 16px 40px rgba(20,18,16,0.12)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = "none";
+            }}
           >
-            <div className="project-card-top">
-              <span className="project-cat">{project.category}</span>
-              <span className="project-arrow">↗</span>
+            {/* Thumbnail — always fills box cleanly */}
+            <div
+              style={{
+                width: "100%",
+                aspectRatio: "4 / 3",
+                overflow: "hidden",
+                position: "relative",
+                background: "#ece4d8",
+              }}
+            >
+              <img
+                src={project.image || "/images/project-placeholder-1.svg"}
+                alt={project.title}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                  display: "block",
+                }}
+              />
+              <span
+                style={{
+                  position: "absolute",
+                  top: "10px",
+                  left: "10px",
+                  background: "rgba(20, 18, 16, 0.85)",
+                  color: "#fff",
+                  fontSize: "9px",
+                  fontWeight: "700",
+                  padding: "3px 8px",
+                  borderRadius: "4px",
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                }}
+              >
+                {project.category}
+              </span>
             </div>
-            
-            <h3 className="project-name">{project.title}</h3>
-            <p className="project-desc">{project.description}</p>
 
-            {project.metrics && (
-              <div className="project-card-metrics">
-                <span className="card-stat-num">{project.metrics[0].value}</span>
-                <span className="card-stat-lbl">{project.metrics[0].label}</span>
+            <div
+              style={{
+                padding: "14px 16px 16px",
+                display: "flex",
+                flexDirection: "column",
+                flexGrow: 1,
+              }}
+            >
+              <span
+                style={{
+                  fontSize: "10px",
+                  fontWeight: "700",
+                  color: "var(--ember, #c45c26)",
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                }}
+              >
+                {project.client || "Concept Design"}
+              </span>
+
+              <h3
+                style={{
+                  fontSize: "1.05rem",
+                  fontWeight: "700",
+                  margin: "4px 0 8px",
+                  lineHeight: 1.3,
+                  color: "#1a1714",
+                }}
+              >
+                {project.title}
+              </h3>
+
+              <p
+                style={{
+                  fontSize: "0.85rem",
+                  opacity: 0.75,
+                  margin: "0 0 12px",
+                  lineHeight: 1.4,
+                  display: "-webkit-box",
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: "vertical",
+                  overflow: "hidden",
+                }}
+              >
+                {project.description}
+              </p>
+
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", marginTop: "auto" }}>
+                {project.tools?.slice(0, 3).map((tool, i) => (
+                  <span
+                    key={i}
+                    style={{
+                      fontSize: "9px",
+                      background: "rgba(20, 18, 16, 0.04)",
+                      border: "1px solid rgba(20, 18, 16, 0.08)",
+                      padding: "2px 6px",
+                      borderRadius: "3px",
+                      fontWeight: "500",
+                    }}
+                  >
+                    {tool}
+                  </span>
+                ))}
               </div>
-            )}
+            </div>
           </div>
         ))}
       </div>
 
-      {/* Case Study Slide-over Modal */}
       {selectedProject && (
-        <ProjectModal 
-          project={selectedProject} 
-          onClose={() => setSelectedProject(null)} 
-        />
+        <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
       )}
     </section>
   );

@@ -19,7 +19,8 @@ export default function About() {
       <div className="container">
         <SectionHeading
           eyebrow="About"
-          title={<>Behind the strategy.</>}
+          title={<>Creative thinking meets
+digital strategy.</>}
         />
 
         <div className="about__grid">

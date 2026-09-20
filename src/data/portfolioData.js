@@ -23,37 +23,41 @@ export const portfolioData = {
    *  PERSONAL / HERO
    * ------------------------------------------------------------------------ */
   personal: {
-    name: "[YOUR NAME]",
-    role: "Digital Marketing Student",
+    name: "Samruddhi Shukla",
+    role: "DIGITAL MARKETING FREELANCER",
 
     // One sentence that defines your personal brand (shown under your name).
-    tagline: "Turning attention into connection.",
+    tagline: "Turning ideas into Brands people remember.",
 
     // 1–2 sentences for the hero section.
     intro:
-      "[WRITE A SHORT 1–2 SENTENCE INTRODUCTION ABOUT YOUR DIGITAL MARKETING INTERESTS — THE CHANNELS, CAMPAIGNS OR AUDIENCES THAT EXCITE YOU.]",
+      "Passionate about content strategy, SEO, and consumer psychology. I help brands build a stronger digital presence through thoughtful content, social media, SEO and performance marketing.",
 
     // 100–150 word biography used in the About section.
-    bio: "[WRITE A 100–150 WORD BIOGRAPHY HERE. Cover your background, what first drew you to digital marketing, the kinds of campaigns, channels and audiences you enjoy exploring, what you are studying, and where you hope your marketing journey takes you next. Keep it human, specific and honest rather than listing buzzwords.]",
+    bio: "I'm a digital marketing freelancer who enjoys turning ideas into meaningful digital experiences. From content and social media to SEO and performance marketing, I combine creativity with strategy to help brands show up online with confidence.",
 
     // Replace this path with your own photo, e.g. "/images/my-profile.jpg"
-    profileImage: "/images/profile-placeholder.svg",
+    profileImage: "/images/about/SS_PORTFOLIO_IMAGE.jpeg",
     profileAlt: "Placeholder profile portrait illustration",
 
-    email: "[YOUR EMAIL]",
-    phone: "[YOUR PHONE]",
-    location: "[YOUR CITY, COUNTRY]",
+    email: "samruddhishukla1510@gmail.com",
+    phone: "+91 98695 83814",
+    location: "[Dombivali, India]",
 
     // Short snapshot chips shown beside the biography.
     focusAreas: [
-      "Social-first campaigns",
-      "Content strategy",
-      "Brand storytelling",
-      "Learning from analytics",
+      "Social Media Marketing",
+      "SEO",
+      "Google & Meta Ads",
+      "Email Marketing",
+      "Content Creation",
+      "Canva Design",
+      "WordPress",
+      "Analytics & Performance Tracking", 
     ],
 
     // Put your PDF in public/resume/ and keep this path in sync.
-    resume: "/resume/your-resume.pdf",
+    resume: "/resume/Samruddhi Shukla Resume.pdf",
   },
 
   /* --------------------------------------------------------------------------
@@ -65,18 +69,18 @@ export const portfolioData = {
   socials: [
     {
       platform: "LinkedIn",
-      label: "[YOUR LINKEDIN HANDLE]",
-      url: "#",
+      label: "[SAMRUDDHI SHUKLA]",
+      url: "https://www.linkedin.com/in/samruddhi-shukla-57b16a340?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     },
     {
       platform: "Instagram",
-      label: "[YOUR INSTAGRAM HANDLE]",
-      url: "#",
+      label: "[SAMCREATES.15]",
+      url: "https://www.instagram.com/samcreates.15?stkn=ZnRtcWRhYmJ6a3Rz",
     },
     {
-      platform: "Behance",
-      label: "[YOUR BEHANCE HANDLE]",
-      url: "#",
+      platform: "Facebook",
+      label: "[SAMRUDDHI SHUKLA]",
+      url: "https://www.facebook.com/share/19aWayWeTn/?stkn=ZnRtcWRhYmJ6a3Rz",
     },
   ],
 
@@ -107,24 +111,19 @@ export const portfolioData = {
    * ------------------------------------------------------------------------ */
   journey: [
     {
-      period: "[YEAR OR PERIOD]",
-      title: "[MILESTONE — e.g. FIRST MARKETING COURSE]",
-      description: "[WHAT SPARKED YOUR INTEREST IN DIGITAL MARKETING?]",
+      period: "2025 — Discovering Digital Marketing",
+      title: "Milestone — Started exploring Digital Marketing",
+      description: "Began learning how brands use social media, content and digital platforms to connect with their audience.",
     },
     {
-      period: "[YEAR OR PERIOD]",
-      title: "[MILESTONE — e.g. FIRST CAMPAIGN EXPERIMENT]",
-      description: "[WHAT DID YOU TRY, MAKE OR LEARN?]",
+      period: "2026 — Practical Projects & Campaigns",
+      title: "Milestone — Turning Learning into Practice",
+      description: "Worked on brand research, marketing campaigns, social media creatives, paid advertising and content strategies through practical projects.",
     },
     {
-      period: "[YEAR OR PERIOD]",
-      title: "[MILESTONE — e.g. INTERNSHIP, CLUB OR FREELANCE WORK]",
-      description: "[WHAT DID YOU TAKE AWAY FROM THE EXPERIENCE?]",
-    },
-    {
-      period: "[YEAR OR PRESENT]",
-      title: "[WHERE YOU ARE NOW]",
-      description: "[WHAT YOU ARE STUDYING OR FOCUSING ON TODAY.]",
+      period: "Present — Building My Digital Marketing Career",
+      title: "Where I am now",
+      description: "Currently pursuing my BTech along with a Diploma in Digital Marketing, while building my portfolio and developing my skills as a Digital Marketing Freelancer.",
     },
   ],
 
@@ -134,26 +133,26 @@ export const portfolioData = {
    *  `icon` options: pen | trending | palette | chart
    *  Tap/click a skill to reveal its description.
    * ------------------------------------------------------------------------ */
-  skillGroups: [
+    skillGroups: [
     {
       category: "CONTENT",
-      tagline: "Messages people want to spend time with.",
+      tagline: "Messages people actually want to spend time with.",
       icon: "pen",
       items: [
         {
           name: "Social Media Marketing",
           description:
-            "[DESCRIBE YOUR INTEREST OR EXPERIENCE — PLATFORMS, FORMATS, COMMUNITY THINKING.]",
+            "Planning monthly content calendars, writing captions, and building community engagement across Instagram, LinkedIn, and TikTok.",
         },
         {
           name: "Content Strategy",
           description:
-            "[DESCRIBE HOW YOU PLAN CONTENT THEMES, PILLARS AND CALENDARS.]",
+            "Researching audience pain points, defining content pillars, and mapping out posting schedules that stay consistent.",
         },
         {
           name: "Copywriting",
           description:
-            "[DESCRIBE THE VOICES, FORMATS OR PROJECTS YOU HAVE WRITTEN FOR.]",
+            "Writing high-converting captions, carousel scripts, email newsletters, and short-form video scripts matched to brand voice.",
         },
       ],
     },
@@ -163,19 +162,19 @@ export const portfolioData = {
       icon: "trending",
       items: [
         {
-          name: "SEO",
+          name: "SEO Fundamentals",
           description:
-            "[DESCRIBE YOUR INTEREST IN KEYWORDS, ON-PAGE SEO OR SEARCH INTENT.]",
+            "Keyword research using Ubersuggest and AnswerThePublic, on-page optimization with meta tags, headers, and search intent mapping.",
         },
         {
           name: "Email Marketing",
           description:
-            "[DESCRIBE FLOWS, NEWSLETTERS OR SEGMENTATION YOU HAVE EXPLORED.]",
+            "Setting up welcome sequences, newsletters, and basic subscriber segmentation using Mailchimp and MailerLite.",
         },
         {
-          name: "Campaign Planning",
+          name: "Meta Ads Basics",
           description:
-            "[DESCRIBE HOW YOU APPROACH OBJECTIVES, TIMELINES AND CHANNEL MIX.]",
+            "Campaign setup in Meta Ads Manager for lead generation and traffic objectives, including audience targeting and A/B testing.",
         },
       ],
     },
@@ -185,19 +184,19 @@ export const portfolioData = {
       icon: "palette",
       items: [
         {
-          name: "Branding",
+          name: "Visual Branding",
           description:
-            "[DESCRIBE YOUR INTEREST IN POSITIONING, IDENTITY AND BRAND VOICE.]",
+            "Designing social media graphics, templates, and brand style guides using Canva Pro and Adobe Express.",
         },
         {
-          name: "Visual Communication",
+          name: "Short-Form Video",
           description:
-            "[DESCRIBE TOOLS YOU USE, e.g. CANVA / FIGMA, AND HOW YOU THINK ABOUT LAYOUT.]",
+            "Editing Reels, TikToks, and YouTube Shorts using CapCut — from hook writing to final export.",
         },
         {
-          name: "Audience Positioning",
+          name: "Audience Research",
           description:
-            "[DESCRIBE HOW YOU THINK ABOUT AUDIENCE PERSONAS AND MESSAGING FIT.]",
+            "Building audience personas, analyzing competitor positioning, and aligning messaging to the right demographic.",
         },
       ],
     },
@@ -207,77 +206,127 @@ export const portfolioData = {
       icon: "chart",
       items: [
         {
-          name: "Analytics",
+          name: "Analytics & Tracking",
           description:
-            "[DESCRIBE PLATFORMS OR METRICS YOU ARE LEARNING, e.g. GA4 / META INSIGHTS.]",
+            "Reading dashboards in Google Analytics 4 and Meta Insights to understand traffic sources, engagement, and conversions.",
         },
         {
-          name: "Performance Tracking",
+          name: "Performance Reporting",
           description:
-            "[DESCRIBE HOW YOU SET KPIs AGAINST A CAMPAIGN OBJECTIVE.]",
+            "Creating monthly performance decks with clear KPIs, visual charts, and actionable next-step recommendations.",
         },
         {
-          name: "Reporting",
+          name: "A/B Testing",
           description:
-            "[DESCRIBE HOW YOU TURN NUMBERS INTO CLEAR, HONEST STORIES.]",
+            "Running simple split tests on ad creatives, email subject lines, and landing page copy to find what performs best.",
         },
       ],
     },
   ],
-
   /* --------------------------------------------------------------------------
    *  PROJECTS — your proof of work. Clicking a card opens a full case study.
    *  Copy a whole block to add another project; delete a block to remove one.
    *  Use only outcomes/metrics that are REAL — otherwise leave the learning.
    * ------------------------------------------------------------------------ */
-  projects: [
+      projects: [
     {
-      title: "[PROJECT TITLE]",
-      category: "Social Media Campaign",
-      image: "/images/project-placeholder-1.svg",
-      alt: "Placeholder social media campaign workspace image",
-      objective:
-        "[WHAT WAS THE PROBLEM OR BRIEF? WHO WERE YOU TRYING TO REACH?]",
-      approach:
-        "[WHAT STRATEGY, CHANNEL MIX, CONTENT OR EXPERIMENT DID YOU DESIGN, AND WHY?]",
-      tools: ["[TOOL 1]", "[TOOL 2]", "[TOOL 3]"],
-      outcome:
-        "[REAL MEASURED RESULT OR HONEST LEARNING — DO NOT INVENT METRICS.]",
-      link: "#",
-      linkLabel: "View project",
+      title: "Matcha Mood — Summer Special",
+      client: "Matcha Mood (concept)",
+      category: "Social Media",
+      image: "/images/projects/project-01-matcha-mood.png", 
+      description: "A bright summer promotional creative built around matcha-based drinks, using fresh green tones, product-focused imagery, a seasonal offer, and a clear purchase CTA.",
+      tools: ["Canva", "Photoshop", "Social Media Design"],
     },
     {
-      title: "[PROJECT TITLE]",
-      category: "Content & SEO",
-      image: "/images/project-placeholder-2.svg",
-      alt: "Placeholder strategy and campaign planning board image",
-      objective:
-        "[WHAT WAS THE PROBLEM OR BRIEF? WHO WERE YOU TRYING TO REACH?]",
-      approach:
-        "[WHAT STRATEGY, KEYWORD OR CONTENT APPROACH DID YOU DESIGN, AND WHY?]",
-      tools: ["[TOOL 1]", "[TOOL 2]"],
-      outcome:
-        "[REAL MEASURED RESULT OR HONEST LEARNING — DO NOT INVENT METRICS.]",
-      link: "#",
-      linkLabel: "View project",
+      title: "Watermelon Cooling Gel Face Wash — Summer Special",
+      client: "Dot & Key (concept)",
+      category: "Beauty & Skincare",
+      image: "/images/projects/project-02-dot-key-watermelon-gel.png", 
+      description: "A product-focused skincare visual highlighting a watermelon cooling gel face wash through a fresh pink composition, product placement, and splash imagery.",
+      tools: ["Canva", "Photoshop", "Product Composition", "Social Media Design"],
     },
     {
-      title: "[PROJECT TITLE]",
-      category: "Email & Analytics",
-      image: "/images/project-placeholder-3.svg",
-      alt: "Placeholder email and analytics campaign dashboard image",
-      objective:
-        "[WHAT WAS THE PROBLEM OR BRIEF? WHO WERE YOU TRYING TO REACH?]",
-      approach:
-        "[WHAT SEGMENTS, FLOWS OR TESTS DID YOU DESIGN, AND HOW DID YOU TRACK THEM?]",
-      tools: ["[TOOL 1]", "[TOOL 2]"],
-      outcome:
-        "[REAL MEASURED RESULT OR HONEST LEARNING — DO NOT INVENT METRICS.]",
-      link: "#",
-      linkLabel: "View project",
+      title: "Eat Better. Live Simpler.",
+      client: "IKEA (concept)",
+      category: "Food & Lifestyle",
+      image: "/images/projects/project-03-ikea-eat-better.png", 
+      description: "A lifestyle-oriented promotional creative combining food photography, nutritional information, sustainability messaging, and a clear product offer.",
+      tools: ["Canva", "Photoshop", "Layout Design", "Infographic Design"],
     },
+    {
+      title: "Monsoon Blend — Coffee Lovers Campaign",
+      client: "Starbucks (concept)",
+      category: "Social Media",
+      image: "/images/projects/project-04-starbucks-monsoon-blend.png", 
+      description: "A premium seasonal coffee campaign using a dark atmospheric composition to communicate a monsoon-themed blend and its tasting notes.",
+      tools: ["Photoshop", "Canva", "Typography", "Campaign Design"],
+    },
+    {
+      title: "Watermelon Cooling Gel Face Wash — Blue Variant",
+      client: "Dot & Key (concept)",
+      category: "Beauty & Skincare",
+      image: "/images/projects/project-05-dot-key-watermelon-gel-blue.png", 
+      description: "A second product creative exploring a cooler visual treatment for the same skincare concept, using blue tones and product-centered composition.",
+      tools: ["Canva", "Photoshop", "Product Composition", "Social Media Design"],
+    },
+    {
+      title: "2 Minutes of Happiness",
+      client: "Maggi (concept)",
+      category: "Food & Beverage",
+      image: "/images/projects/project-06-maggi-two-minutes.png", 
+      description: "A nostalgic food-poster concept built around comfort, warmth, and the familiar instant-noodle experience, using an illustrated retro-inspired visual style.",
+      tools: ["Canva", "Photoshop", "Illustration", "Poster Design"],
+    },
+    {
+      title: "Some Places Welcome You. Others Remember You.",
+      client: "Airbnb (concept)",
+      category: "Travel & Hospitality",
+      image: "/images/projects/project-07-airbnb-welcome-you.png", 
+      description: "A warm hospitality concept focused on emotional storytelling, comfort, belonging, and memorable travel experiences rather than simply promoting a destination.",
+      tools: ["Canva", "Photoshop", "Image Composition", "Brand Storytelling"],
+    },
+    {
+      title: "Music Colors Every Moment",
+      client: "Spotify (concept)",
+      category: "Music & Entertainment",
+      image: "/images/projects/project-08-spotify-music-colors.png", 
+      description: "A vibrant music campaign concept connecting sound with color, energy, movement, and personal expression through an expressive headphone-centered composition.",
+      tools: ["Photoshop, Canva, Digital Composition, Campaign Design"],
+    },
+    {
+      title: "Mint Lemonade — Taste of Freshness",
+      client: "Brand Concept",
+      category: "Food & Beverage",
+      image: "/images/projects/project-09-mint-lemonade.png", 
+      description: "A refreshing beverage poster centered on mint, lemon, ice, and water textures, using a green palette to communicate freshness and summer appeal.",
+      tools: ["Canva", "Photoshop", "Product Composition", "Poster Design"],
+    },
+    {
+      title: "Open Your Soundtrack",
+      client: "Spotify (concept)",
+      category: "Music & Entertainment",
+      image: "/images/projects/project-10-spotify-open-your-soundtrack.png", 
+      description: "A colorful promotional concept presenting music as a personalized world of moods, playlists, genres, and experiences.",
+      tools: ["Canva", "Photoshop", "Social Media Design", "Campaign Concepting"],
+    },
+    {
+      title: "The Calm Inside the Storm",
+      client: "Starbucks (concept)",
+      category: "Food & Beverage",
+      image: "/images/projects/project-11-starbucks-calm-storm.png", 
+      description: "A cinematic coffee campaign concept pairing rainy monsoon surroundings with a warm Starbucks moment to communicate calm, comfort, and seasonal atmosphere.",
+      tools: ["Photoshop", "Canva", "Art Direction", "Campaign Design"],
+    },
+    {
+      title: "Puma — Product",
+      client: "PUMA (concept)",
+      category: "Fashion & Sportswear",
+      image: "/images/projects/project-12-puma-shoes.png", 
+      description: "A minimalist sportswear product composition using oversized typography and floating footwear imagery to create a bold, performance-oriented visual.",
+      tools: ["Photoshop", "Canva", "Typography", "Product Advertising"],
+    }
   ],
-
+  
   /* --------------------------------------------------------------------------
    *  PERFORMANCE THINKING — a funnel diagram with slots for REAL metrics.
    *  Leave the metric placeholders until you have actual numbers.
@@ -353,65 +402,50 @@ export const portfolioData = {
    *  `icon` options: megaphone | newspaper | search | mail | palette
    *                  pen | target | chart
    * ------------------------------------------------------------------------ */
-  services: [
+    services: [
     {
-      title: "Social Media Strategy",
+      title: "Social Media Management",
       icon: "megaphone",
       description:
-        "[CHANNEL GOALS, CONTENT PILLARS AND POSTING RHYTHM — PLACEHOLDER.]",
+        "Building monthly content calendars, scheduling posts, and engaging with communities across Instagram, LinkedIn, and TikTok.",
       link: "#contact",
     },
     {
-      title: "Content Strategy",
-      icon: "newspaper",
-      description:
-        "[PLANNING CONTENT THAT SERVES BOTH THE AUDIENCE AND THE BRAND.]",
-      link: "#contact",
-    },
-    {
-      title: "SEO",
-      icon: "search",
-      description:
-        "[SEARCH-INTENT RESEARCH AND ON-PAGE OPTIMIZATION FOUNDATIONS.]",
-      link: "#contact",
-    },
-    {
-      title: "Email Marketing",
-      icon: "mail",
-      description:
-        "[WELCOME FLOWS, NEWSLETTERS AND SIMPLE SEGMENTATION IDEAS.]",
-      link: "#contact",
-    },
-    {
-      title: "Branding",
-      icon: "palette",
-      description:
-        "[VOICE, POSITIONING AND VISUAL CONSISTENCY ACROSS TOUCHPOINTS.]",
-      link: "#contact",
-    },
-    {
-      title: "Copywriting",
+      title: "Content Creation & Copywriting",
       icon: "pen",
       description:
-        "[CLEAR, ON-BRAND WRITING FOR CAPTIONS, EMAILS AND PAGES.]",
+        "Writing compelling captions, educational carousel copy, short video scripts, and email newsletters tailored to brand voice.",
       link: "#contact",
     },
     {
-      title: "Campaign Planning",
+      title: "Visual Asset & Poster Design",
+      icon: "palette",
+      description:
+        "Designing aesthetic, high-converting social graphics, flyers, presentation decks, and brand templates using Canva Pro & Adobe Express.",
+      link: "#contact",
+    },
+    {
+      title: "SEO & Keyword Research",
+      icon: "search",
+      description:
+        "Conducting search-intent keyword research, writing SEO-optimized blog outlines, and optimizing on-page meta tags & headers.",
+      link: "#contact",
+    },
+    {
+      title: "Meta Ads Campaign Setup",
       icon: "target",
       description:
-        "[OBJECTIVES, TIMELINES, CHANNEL MIX AND LEARNING PLANS.]",
+        "Setting up targeted traffic and lead-generation campaigns in Meta Ads Manager with creative A/B testing and budget monitoring.",
       link: "#contact",
     },
     {
-      title: "Analytics",
+      title: "Performance Reporting",
       icon: "chart",
       description:
-        "[SETTING KPIs AND READING REPORTS TO IMPROVE THE NEXT ROUND.]",
+        "Tracking key metrics with Google Analytics 4 & Meta Insights and turning data into actionable monthly summary decks.",
       link: "#contact",
     },
   ],
-
   /* --------------------------------------------------------------------------
    *  BLOG / WRITING — set `featured: true` on ONE post for the large card.
    * ------------------------------------------------------------------------ */
